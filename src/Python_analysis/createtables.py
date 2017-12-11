@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 # In[22]:
 
 
-conn = sqlite3.connect('../../data/data.db')
+conn = sqlite3.connect('data/data.db')
 
 
 # In[23]:
@@ -45,7 +45,7 @@ region_summary = pd.read_sql("""
 """,con = conn)
 
 
-region_summary.to_csv('../../results/summary_tables/region_summary.csv')
+region_summary.to_csv('results/summary_tables/region_summary.csv')
 
 
 # In[53]:
@@ -82,7 +82,7 @@ source_of_most_recent_income_and_expenditure = pd.read_sql(
             
         """, con=conn)
 
-source_of_most_recent_income_and_expenditure.to_csv('../../results/summary_tables/source_of_most_recent_income_and_expenditure.csv')
+source_of_most_recent_income_and_expenditure.to_csv('results/summary_tables/source_of_most_recent_income_and_expenditure.csv')
 
 
 # In[54]:
@@ -95,7 +95,7 @@ distinct_indicator_names_and_codes = pd.read_sql(
             from series
         """, con=conn)
 
-distinct_indicator_names_and_codes.to_csv('../../results/summary_tables/distinct_indicator_names_and_codes.csv')
+distinct_indicator_names_and_codes.to_csv('results/summary_tables/distinct_indicator_names_and_codes.csv')
 
 
 # *************************** Generating data for testing and results ****************************
@@ -131,7 +131,7 @@ hypothesis1 = pd.read_sql(""" SELECT   *
                                       ( 'EN.ATM.CO2E.PC','EN.ATM.PM25.MC.M3')
                             order by CountryName,Year
                         """, con=conn)
-hypothesis1.to_csv('../../data/processed_data/hypothesis1.csv')
+hypothesis1.to_csv('data/processed_data/hypothesis1.csv')
 
 
 # In[83]:
@@ -143,7 +143,7 @@ hypothesis1_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.Co
                 where t1.CountryCode = t2.CountryCode
             """, con=conn)
 
-hypothesis1_2010.to_csv('../../data/processed_data/hypothesis1_2010.csv')
+hypothesis1_2010.to_csv('data/processed_data/hypothesis1_2010.csv')
 
 
 # In[71]:
@@ -155,7 +155,7 @@ hypothesis2 = pd.read_sql(""" SELECT   *
                                       ( 'SP.DYN.LE00.IN','NY.GDP.PCAP.CD')
                             order by CountryName,Year
                         """, con=conn)
-hypothesis2.to_csv('../../data/processed_data/hypothesis2.csv')
+hypothesis2.to_csv('data/processed_data/hypothesis2.csv')
 
 
 # In[84]:
@@ -167,7 +167,7 @@ hypothesis2_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.Co
                 where t1.CountryCode = t2.CountryCode
             """, con=conn)
 
-hypothesis2_2010.to_csv('../../data/processed_data/hypothesis2_2010.csv')
+hypothesis2_2010.to_csv('data/processed_data/hypothesis2_2010.csv')
 
 
 # In[73]:
@@ -179,7 +179,7 @@ hypothesis3 = pd.read_sql(""" SELECT   *
                                       ( 'SH.MED.BEDS.ZS','SP.DYN.AMRT.MA')
                             order by CountryName,Year
                         """, con=conn)
-hypothesis3.to_csv('../../data/processed_data/hypothesis3.csv')
+hypothesis3.to_csv('data/processed_data/hypothesis3.csv')
 
 
 # In[85]:
@@ -191,5 +191,5 @@ hypothesis3_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.Co
                 where t1.CountryCode = t2.CountryCode
             """, con=conn)
 
-hypothesis3_2010.to_csv('../../data/processed_data/hypothesis3_2010.csv')
+hypothesis3_2010.to_csv('data/processed_data/hypothesis3_2010.csv')
 
