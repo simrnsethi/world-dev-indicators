@@ -44,3 +44,24 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 - Run hypothesis tests on the above mentioned hypothesis (maybe paired t-test or ANOVA?).
 - Represent the final results in the form of graphs and figures.
 - Document the findings from the dataset.
+
+## How to run the analysis ⚙️
+
+1. Clone this repo to a local folder on your system.
+2. Navigate into this folder "world-dev-indicators" through command line.
+3. Type:
+			
+		
+		$make clear_all
+			
+		
+	This will clear all the result files which come with this repo.
+
+4. Now, type:
+
+		
+		$make all
+		
+This will run all the scripts in the `src/` folder as per the sequence in `Makefile` and render the analysis in the `results/` folder.
+
+The final report is rendered at this location: `results/finalreport/`
