@@ -19,6 +19,7 @@ report: create_tables
 move2results: report
 	mv src/R_analysis/generate_report.md results/finalreport/
 	mv src/R_analysis/generate_report.html results/finalreport/
+	mv src/R_analysis/generate_report results/finalreport/
 
 clear_all:
 	rm -f data/processed_data/*.csv
