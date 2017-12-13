@@ -65,3 +65,9 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 This will run all the scripts in the `src/` folder as per the sequence in `Makefile` and render the analysis in the `results/` folder.
 
 The final report is rendered at this location: `results/finalreport/`
+
+### Makefile Dependency Graph:
+
+<p align="center">![](Makefile.png)<p>
+
+[Attribution: Dependency graph generated using [this software](https://github.com/lindenb/makefile2graph)]
