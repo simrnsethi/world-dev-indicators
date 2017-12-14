@@ -1,3 +1,13 @@
+# Driver Makefile 
+# 
+# Date: December 2017
+# 
+# Author: Simran Sethi
+# This script establishes a sqlite database connetion and then loads all the csv's from the data folder 
+# and stores them into the /data/processed_data folder after processing over them.
+# usage: input = data/*.csv
+#       output = data/processed_data.csv
+# This .py file has been downloaded from an ipython notebook (src/createtables.ipynb), hence the comments
 
 # coding: utf-8
 
