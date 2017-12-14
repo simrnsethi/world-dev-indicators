@@ -1,4 +1,4 @@
-# Driver Makefile 
+# A script that generated data for hypothesis testing. 
 # 
 # Date: December 2017
 # 

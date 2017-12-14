@@ -6,6 +6,7 @@
 # usage: $make clear_all 
 # 		 $make all
 
+# run all the commands
 all: move2doc
 
 # downloads the data from google cloud API
@@ -24,11 +25,13 @@ create_tables: csv2db
 report: create_tables
 	Rscript -e "ezknitr::ezknit('src/R_analysis/generate_report.Rmd')"
 
+# move generated report to doc folder (will remove it in next release and append "opt.dir" paramenter to the ezknitr command)
 move2doc: report
 	mv src/R_analysis/generate_report.md doc/final_report/
 	mv src/R_analysis/generate_report.html doc/final_report/
 	mv src/R_analysis/generate_report doc/final_report/
 
+# run this to clean the directory (removes all the downloaded and processed files)
 clear_all:
 	rm -f data/processed_data/*.csv
 	rm -f data/*.csv

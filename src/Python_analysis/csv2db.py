@@ -1,3 +1,11 @@
+# CSV to database conversion script
+# Date: December 2017
+# Author: Simran Sethi
+# This file converts all the CSVs to sqlite3 database.
+# 
+# usage: $make clear_all 
+# 		 $make all
+
 import csv
 import glob
 import sqlite3
@@ -35,7 +43,7 @@ def file2table(db):
 	df = pd.read_csv(filename6)
 	df.to_sql(tablename6, conn, if_exists='replace', index=False)
 
-
+# main function which when the script runs calls the above function to do the conversion of sql to database.
 if __name__ == '__main__':
 	conn = sqlite3.connect('data/data.db')
 	file2table(conn)
