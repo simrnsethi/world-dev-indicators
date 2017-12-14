@@ -38,13 +38,6 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 
 
 
-## Data Analysis Plan 📋
-
-- Clean and structurize the data.
-- Run hypothesis tests on the above mentioned hypothesis (maybe paired t-test or ANOVA?).
-- Represent the final results in the form of graphs and figures.
-- Document the findings from the dataset.
-
 ## How to run the analysis ⚙️
 
 1. Clone this repo to a local folder on your system.
@@ -64,7 +57,7 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 		
 This will run all the scripts in the `src/` folder as per the sequence in `Makefile` and render the analysis in the `results/` folder.
 
-The final report is rendered at this location: `results/finalreport/`
+**The final report is rendered at this location: `doc/final_report/`**
 
 ### Makefile Dependency Graph:
 <p align="center">
