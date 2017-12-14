@@ -1,4 +1,12 @@
-all: move2results
+# Driver Makefile 
+# Date: 10 December 2017
+# Author: Simran Sethi
+# This is the master makefile which runs all the other scripts. 
+# Please refer to the dependency diagram here: https://github.com/simrnsethi/world-dev-indicators/blob/master/Makefile.png
+# usage: $make clear_all 
+# 		 $make all
+
+all: move2doc
 
 # downloads the data from google cloud API
 download_data:
@@ -16,10 +24,10 @@ create_tables: csv2db
 report: create_tables
 	Rscript -e "ezknitr::ezknit('src/R_analysis/generate_report.Rmd')"
 
-move2results: report
-	mv src/R_analysis/generate_report.md results/finalreport/
-	mv src/R_analysis/generate_report.html results/finalreport/
-	mv src/R_analysis/generate_report results/finalreport/
+move2doc: report
+	mv src/R_analysis/generate_report.md doc/final_report/
+	mv src/R_analysis/generate_report.html doc/final_report/
+	mv src/R_analysis/generate_report doc/final_report/
 
 clear_all:
 	rm -f data/processed_data/*.csv
