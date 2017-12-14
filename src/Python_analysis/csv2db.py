@@ -1,10 +1,15 @@
 # CSV to database conversion script
-# Date: December 2017
-# Author: Simran Sethi
-# This file converts all the CSVs to sqlite3 database.
 # 
-# usage: $make clear_all 
-# 		 $make all
+# Date: December 2017
+# 
+# Author: Simran Sethi
+# 
+# This file converts all the CSVs to a sqlite3 database.
+# 
+# usage: python csv2db.py
+# input: data/*.csv
+# output: data/data.db
+
 
 import csv
 import glob
@@ -12,6 +17,7 @@ import sqlite3
 import os
 import pandas as pd
 
+# this function converts all the CSV files present in data folder to 
 def file2table(db):
 	filename1 = 'data/Indicators.csv'
 	tablename1 = os.path.splitext(os.path.basename(filename1))[0].lower()

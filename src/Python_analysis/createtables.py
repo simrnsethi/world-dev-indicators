@@ -3,15 +3,15 @@
 # Date: December 2017
 # 
 # Author: Simran Sethi
+# 
 # This script establishes a sqlite database connetion and then loads all the csv's from the data folder 
 # and stores them into the /data/processed_data folder after processing over them.
+# 
 # usage: input = data/*.csv
-#       output = data/processed_data.csv
-# This .py file has been downloaded from an ipython notebook (src/createtables.ipynb), hence the comments
+#        output = data/processed_data/*.csv
+# This .py file has been downloaded from the ipython notebook (src/createtables.ipynb)
 
-# coding: utf-8
 
-# In[21]:
 
 
 import pandas as pd
@@ -24,13 +24,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# In[22]:
-
 
 conn = sqlite3.connect('data/data.db')
 
-
-# In[23]:
 
 
 # testing connetion to SQL database
@@ -41,8 +37,6 @@ country = pd.read_sql(
 )
 country.head(4)
 
-
-# In[52]:
 
 
 # creating summary statistic on the above table
@@ -57,8 +51,6 @@ region_summary = pd.read_sql("""
 
 region_summary.to_csv('results/summary_tables/region_summary.csv')
 
-
-# In[53]:
 
 
 # Let's do a LEFT JOIN on some subqueries 
@@ -95,8 +87,6 @@ source_of_most_recent_income_and_expenditure = pd.read_sql(
 source_of_most_recent_income_and_expenditure.to_csv('results/summary_tables/source_of_most_recent_income_and_expenditure.csv')
 
 
-# In[54]:
-
 
 distinct_indicator_names_and_codes = pd.read_sql(
         """ 
@@ -132,9 +122,7 @@ distinct_indicator_names_and_codes.to_csv('results/summary_tables/distinct_indic
 # 
 # `SP.DYN.AMRT.MA` = Mortality rate, adult, male (per 1,000 male adults)
 
-# In[66]:
-
-
+# generates data/processed_data/hypothesis1.csv
 hypothesis1 = pd.read_sql(""" SELECT   * 
                              FROM     Indicators 
                              WHERE    IndicatorCode IN 
@@ -144,9 +132,7 @@ hypothesis1 = pd.read_sql(""" SELECT   *
 hypothesis1.to_csv('data/processed_data/hypothesis1.csv')
 
 
-# In[83]:
-
-
+# generates data/processed_data/hypothesis1_2010.csv
 hypothesis1_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.CountryCode as CountryCode,t1.Year as year,t1.IndicatorName as IndicatorName1,t2.IndicatorName as IndicatorName2,t1.IndicatorCode as IndicatorCode1, t2.IndicatorCode as IndicatorCode2,t1.Value as Value1,t2.Value as Value2 from
                 (select * FROM     Indicators WHERE    IndicatorCode IN ( 'EN.ATM.CO2E.PC') and Year = 2010) as t1,
                 (select * FROM     Indicators WHERE    IndicatorCode IN ( 'EN.ATM.PM25.MC.M3') and Year = 2010) as t2
@@ -156,9 +142,7 @@ hypothesis1_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.Co
 hypothesis1_2010.to_csv('data/processed_data/hypothesis1_2010.csv')
 
 
-# In[71]:
-
-
+# generates data/processed_data/hypothesis2.csv
 hypothesis2 = pd.read_sql(""" SELECT   * 
                              FROM     Indicators 
                              WHERE    IndicatorCode IN 
@@ -168,9 +152,7 @@ hypothesis2 = pd.read_sql(""" SELECT   *
 hypothesis2.to_csv('data/processed_data/hypothesis2.csv')
 
 
-# In[84]:
-
-
+# generates data/processed_data/hypothesis2_2010.csv
 hypothesis2_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.CountryCode as CountryCode,t1.Year as year,t1.IndicatorName as IndicatorName1,t2.IndicatorName as IndicatorName2,t1.IndicatorCode as IndicatorCode1, t2.IndicatorCode as IndicatorCode2,t1.Value as Value1,t2.Value as Value2 from
                 (select * FROM     Indicators WHERE    IndicatorCode IN ( 'SP.DYN.LE00.IN') and Year = 2010) as t1,
                 (select * FROM     Indicators WHERE    IndicatorCode IN ( 'NY.GDP.PCAP.CD') and Year = 2010) as t2
@@ -180,9 +162,7 @@ hypothesis2_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.Co
 hypothesis2_2010.to_csv('data/processed_data/hypothesis2_2010.csv')
 
 
-# In[73]:
-
-
+# generates data/processed_data/hypothesis3.csv
 hypothesis3 = pd.read_sql(""" SELECT   * 
                              FROM     Indicators 
                              WHERE    IndicatorCode IN 
@@ -192,9 +172,7 @@ hypothesis3 = pd.read_sql(""" SELECT   *
 hypothesis3.to_csv('data/processed_data/hypothesis3.csv')
 
 
-# In[85]:
-
-
+# generates data/processed_data/hypothesis3_2010.csv
 hypothesis3_2010 = pd.read_sql(""" SELECT   t1.CountryName as CountryName, t1.CountryCode as CountryCode,t1.Year as year,t1.IndicatorName as IndicatorName1,t2.IndicatorName as IndicatorName2,t1.IndicatorCode as IndicatorCode1, t2.IndicatorCode as IndicatorCode2,t1.Value as Value1,t2.Value as Value2 from
                 (select * FROM     Indicators WHERE    IndicatorCode IN ( 'SH.MED.BEDS.ZS') and Year = 2010) as t1,
                 (select * FROM     Indicators WHERE    IndicatorCode IN ( 'SP.DYN.AMRT.MA') and Year = 2010) as t2
