@@ -41,6 +41,9 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 ## How to run the analysis ⚙️
 
 1. Clone this repo to a local folder on your system.
+
+### Make
+
 2. Navigate into this folder "world-dev-indicators" through command line.
 3. Type:
 			
@@ -56,6 +59,10 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 		$make all
 		
 This will run all the scripts in the `src/` folder as per the sequence in `Makefile` and render the analysis in the `results/` folder.
+
+### Docker
+
+1. 
 
 **The final report is rendered at this location: `doc/final_report/`**
 

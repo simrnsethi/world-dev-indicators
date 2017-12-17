@@ -29,5 +29,5 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 
  RUN apt-get update && \
-	pip3 install pandas && \
-	rm -rf /var/lib/apt/lists/*
+  pip3 install pandas && \
+  rm -rf /var/lib/apt/lists/*
