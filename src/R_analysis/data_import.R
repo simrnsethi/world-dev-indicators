@@ -33,3 +33,5 @@ head(series_notes)
 str(series_notes)
 
 options(warn = 0)
+
+sessionInfo()

@@ -3,3 +3,4 @@
 *.ipynb_checkpoints
 *.db
 Makefile.dot
+.Rhistory
