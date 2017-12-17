@@ -24,14 +24,10 @@ RUN apt-get update \
   && pip3 install --upgrade pip
 
 # install python packages
- RUN pip3 install numpy
+COPY requirements.txt ./
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+
  RUN apt-get update && \
-    pip3 install matplotlib && \
-    pip3 install sqlite3 && \
-    pip3 install pandas && \
-    pip3 install os && \
-    pip3 install warnings && \
-    pip3 install glob && \
-    pip3 install csv && \
-    pip3 install warnings && \
+	pip3 install pandas && \
     rm -rf /var/lib/apt/lists/*

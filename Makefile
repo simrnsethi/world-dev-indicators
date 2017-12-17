@@ -38,4 +38,5 @@ clear_all:
 	rm -f results/*.png
 	rm -f results/summary_tables/*.csv
 	rm -f src/R_analysis/generate_report/*.png
+	rm -f doc/final_report/generate_report/*
 
