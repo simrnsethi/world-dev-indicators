@@ -47,22 +47,39 @@ Released Under [**World Bank Dataset Terms of Use**](http://web.worldbank.org/WB
 2. Navigate into this folder "world-dev-indicators" through command line.
 3. Type:
 			
-		
-		$make clear_all
+	```
+	make clear_all
+	```
 			
 		
 	This will clear all the result files which come with this repo.
 
 4. Now, type:
 
-		
-		$make all
+	```
+	make all
+	```
 		
 This will run all the scripts in the `src/` folder as per the sequence in `Makefile` and render the analysis in the `results/` folder.
 
 ### Docker
 
-1. 
+1. Download from Docker
+	
+	```
+	docker pull simransethi/world-dev-indicators
+	```
+	
+2. Clean, so that you can build from start:
+
+	```
+	docker run --rm -v **insert-location-to-repo-in-local-systme**:/home/world-dev-indicators simransethi/world-dev-indicators make -C '/home/world-dev-indicators' clear_all
+	```
+3. Run the whole analysis:
+
+	```
+	docker run --rm -v **insert-location-to-repo-in-local-systme**:/home/world-dev-indicators simransethi/world-dev-indicators make -C '/home/world-dev-indicators' all
+	```
 
 **The final report is rendered at this location: `doc/final_report/`**
 
