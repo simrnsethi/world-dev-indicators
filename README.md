@@ -73,12 +73,12 @@ This will run all the scripts in the `src/` folder as per the sequence in `Makef
 2. Clean, so that you can build from start:
 
 	```
-	docker run --rm -v **insert-location-to-repo-in-local-systme**:/home/world-dev-indicators simransethi/world-dev-indicators make -C '/home/world-dev-indicators' clear_all
+	docker run --rm -v **insert-location-to-repo-in-local-system**:/home/world-dev-indicators simransethi/world-dev-indicators make -C '/home/world-dev-indicators' clear_all
 	```
 3. Run the whole analysis:
 
 	```
-	docker run --rm -v **insert-location-to-repo-in-local-systme**:/home/world-dev-indicators simransethi/world-dev-indicators make -C '/home/world-dev-indicators' all
+	docker run --rm -v **insert-location-to-repo-in-local-system**:/home/world-dev-indicators simransethi/world-dev-indicators make -C '/home/world-dev-indicators' all
 	```
 
 **The final report is rendered at this location: `doc/final_report/`**
