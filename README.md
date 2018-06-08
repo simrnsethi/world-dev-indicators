@@ -1,3 +1,9 @@
+
+[![Docker Build Status](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/simransethi/world-dev-indicators/) 
+[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/simransethi/world-dev-indicators/)
+
+
+
 # World Development Indicators Analysis
 A repository to analyze world development indicators 🌎
 
